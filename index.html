@@ -5,9 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Catalog</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  .card{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+  </style>
 </head>
-<body class="bg-light">
-  <header class="bg-black text-white p-4 mb-4">
+<body class="bg-light d-flex flex-column min-vh-100">
+  <header class="bg-black text-white shadow-sm p-4 mb-4">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
       <h1 class="mb-3 mb-md-0"> Book Catalog</h1>
       <nav>
@@ -22,119 +33,145 @@
   </header>
 
   <section class="py-4 text-center container">
-    <div class="row py-lg-4">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <h1> Book Catalog</h1>
-        <p>Explore, read, and enjoy. </p>
+    <h2 class="display-6 fw-bold">Book Catalog</h2>
+    <p class="text-muted">Explore, enjoy, and rate</p>
+      <div class="input-group justify-content-center mb-4" style=" display: flex;  gap: 0.5rem;">
+        <input type="text" id="searchInput" class="form-control rounded-pill" placeholder="Search for a book title..." style="max-width: 400px; padding: 0.5rem 1rem; ">
+        <button class="btn btn-outline-primary rounded-pill" id="clearButton" style="padding: 0.5rem 1.5rem; background-color: gray; color: white; border: none; font-weight: 500;">Clear</button>
       </div>
-    </div>
+      <div class="d-flex justify-content-center gap-3">
+        <button class="btn bg-secondary text-white rounded-pill" id="highlightButton">Highlight Titles</button>
+        <button class="btn bg-secondary text-white rounded-pill" id="resetButton">Reset Borders</button>
+      </div>
+      
   </section>
-  
-  <main class="container">
-    <div class="input-group mb-4">
-        <input type="text" id="searchInput" class="form-control" placeholder="Search for a book title...">
-        <button class="btn btn-outline-primary" id="clearButton">Clear</button>
-    </div>
-    <div class="d-flex justify-content-center flex-wrap gap-3 my-4">
-        <button class="btn btn-warning" id="highlightButton">Highlight long titles</button>
-        <button class="btn btn-secondary" id="resetButton">Reset Borders</button>
-    </div>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-    
-      <div class="col h-100">
-        <div class="card shadow-sm">
-          <img src="/images/greatgatsby.webp" class="card-img-top img-fluid mx-auto" alt="The Great Gatsby" style="height: 500px; object-fit: contain;">
-          <div class="book card p-3 border border-2">
-            <h2 class="card-title"><a href="#">The Great Gatsby</a></h5>
-            <p class="card-text">A classic novel by F. Scott Fitzgerald about wealth, love, and the American dream.</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="col h-100">
-        <div class="card shadow-sm">
-          <img src="/images/tokill.jpg" class="card-img-top img-fluid mx-auto" alt="To Kill a Mockingbird" style="height: 500px; object-fit: contain;">
-          <div class="book card p-3 border border-2">
-            <h2 class="card-title"><a href="#">To Kill a Mockingbird</a></h5>
-            <p class="card-text">Harper Lee's novel about racial injustice in the Deep South.</p>
+  <main class="container flex-grow-1">
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+      <div class="col">
+        <div class="book card h-100 shadow rounded-4 overflow-hidden border-secondary">
+          <img src="/images/greatgatsby.webp" class="card-img-top img-fluid mx-auto" alt="The Great Gatsby" style="height: 500px; object-fit: cover;">
+          <div class="card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">The Great Gatsby</h2>
+            <p>F. Scott Fitzgerald</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
+            <p class="card-text small">A classic novel by F. Scott Fitzgerald about wealth, love, and the American dream.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/1984.jpg" class="card-img-top" alt="1984">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">1984</a></h5>
-            <p class="card-text">George Orwell's chilling dystopian novel about surveillance and control.</p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/tokill.jpg" class="card-img-top img-fluid mx-auto" alt="To Kill a Mockingbird" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">To Kill a Mockingbird</h2>
+            <p >Harper Lee</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ★</span>
+            <p class="card-text small">Harper Lee's novel about racial injustice in the Deep South</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/pride.jpg" class="card-img-top" alt="Pride and Prejudice">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">Pride and Prejudice</a></h5>
-            <p class="card-text">A timeless romance novel by Jane Austen full of wit and social commentary.</p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/1984.jpg" class="card-img-top img-fluid mx-auto" alt="1984" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">1984</h2>
+            <p>George Orwell</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
+            <p class="card-text small">George Orwell's chilling dystopian novel about surveillance and control.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/pride.jpg" class="card-img-top img-fluid mx-auto" alt="Pride and Prejudice" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">Pride and Prejudice</h2>
+            <p>Jane Austen</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
+            <p class="card-text small">A timeless romance novel by Jane Austen full of wit and social commentary.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/moby.jpg" class="card-img-top" alt="Moby-Dick">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">Moby-Dick</a></h5>
-            <p class="card-text">Herman Melville’s tale of obsession and revenge on the high seas.</p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/moby.jpg" class="card-img-top img-fluid mx-auto" alt="Moby-Dick" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">Moby-Dick</h2>
+            <p>Herman Melville</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ★</span>
+            <p class="card-text small">Herman Melville’s tale of obsession and revenge on the high seas.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/thecatcher.jpg" class="card-img-top" alt="The Catcher in the Rye">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">The Catcher in the Rye</a></h5>
-            <p class="card-text">J.D. Salinger’s novel about teenage rebellion and identity.</p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/thecatcher.jpg" class="card-img-top img-fluid mx-auto" alt="The Catcher in the Rye" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">The Catcher in the Rye</h2>
+            <p>J.D. Salinger</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ★</span>
+            <p class="card-text small">J.D. Salinger’s novel about teenage rebellion and identity.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/hobbit.jpg" class="card-img-top" alt="The Hobbit">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">The Hobbit</a></h5>
-            <p class="card-text">J.R.R. Tolkien’s fantasy adventure that begins the epic Middle-earth saga. </p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/hobbit.jpg" class="card-img-top img-fluid mx-auto" alt="The Hobbit" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">The Hobbit</h2>
+            <p>J.R.R. Tolkien</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
+            <p class="card-text small">J.R.R. Tolkien’s fantasy adventure that begins the epic Middle-earth saga.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/451.jpg" class="card-img-top" alt="Fahrenheit 451">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">Fahrenheit 451</a></h5>
-            <p class="card-text">Ray Bradbury’s dystopian novel about censorship and the power of books.</p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/451.jpg" class="card-img-top img-fluid mx-auto" alt="Fahrenheit 451" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">Fahrenheit 451</h2>
+            <p>Ray Bradbury</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
+            <p class="card-text small">Ray Bradbury’s dystopian novel about censorship and the power of books.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
 
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/janeeyre.jpg" class="card-img-top" alt="Jane Eyre">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">Jane Eyre</a></h5>
-            <p class="card-text">Charlotte Brontë’s gothic romance of love, morality, and independence.</p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/janeeyre.jpg" class="card-img-top img-fluid mx-auto" alt="Jane Eyre" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">Jane Eyre</h2>
+            <p>Charlotte Brontë</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
+            <p class="card-text small">Charlotte Brontë’s gothic romance of love, morality, and independence.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
       <div class="col">
-        <div class="card shadow-sm h-100">
-          <img src="/images/wuther.jpg" class="card-img-top" alt="Wuthering Heights">
-          <div class="book card h-100 p-3 border border-2">
-            <h2 class="card-title"><a href="#">Wuthering Heights</a></h5>
-            <p class="card-text">Emily Brontë’s haunting tale of passion and revenge on the moors.</p>
+        <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
+          <img src="/images/wuther.jpg" class="card-img-top img-fluid mx-auto" alt="Wuthering Heights" style="height: 500px; object-fit: cover;">
+          <div class=" card-body d-flex flex-column justify-content-between">
+            <h2 class="card-title">Wuthering Heights</h2>
+            <p>Emily Brontë</p>
+            <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
+            <p class="card-text small">Emily Brontë’s haunting tale of passion and revenge on the moors.</p>
+            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -142,7 +179,7 @@
     </div>
   </main>
 
-  <footer class="bg-dark text-white text-center py-3 mt-5">
+  <footer class="bg-black text-white text-center py-3 mt-5">
     <p class="mb-0">&copy; 2023 Book Catalog Inc.</p>
   </footer>
 

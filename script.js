@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ----- EVENTS -----
     highlightBtn.addEventListener("click", () => {
       books.forEach(book => {
-        const title = book.querySelector("h2").textContent;
+        const title = book.querySelector("h2").textContent.trim();
         if (title.length > 20) {
           book.classList.remove("border-primary");
           book.classList.add("border-danger", "border-3");
@@ -18,20 +18,20 @@ document.addEventListener("DOMContentLoaded", () => {
     resetBtn.addEventListener("click", () => {
       books.forEach(book => {
         book.classList.remove("border-danger", "border-3", "bg-info", "text-white", "d-none");
-        book.classList.add("border-primary");
+        book.classList.add("border-secondary");
       });
       searchInput.value = "";
     });
   
     books.forEach(book => {
       book.addEventListener("click", () => {
-        book.classList.add("bg-info", "text-white");
+        book.classList.add("bg-black", "text-white");
         setTimeout(() => {
-          book.classList.remove("bg-info", "text-white");
+          book.classList.remove("bg-black", "text-white");
         }, 1000);
       });
     });
-  
+
     // ----- SEARCH LOGIC -----
     searchInput.addEventListener("input", () => {
       const query = searchInput.value.toLowerCase();
