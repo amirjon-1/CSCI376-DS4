@@ -18,9 +18,9 @@
   </style>
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
-  <header class="bg-black text-white shadow-sm p-4 mb-4">
+  <header class="text-white shadow-sm p-4 mb-4" style="background-color: #01013b;">
     <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <h1 class="mb-3 mb-md-0"> Book Catalog</h1>
+      <a href="index.html" class="text-white text-decoration-none"><h1 class="mb-3 mb-md-0"> Book Catalog</h1></a>
       <nav>
         <ul class="nav">
           <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
@@ -36,12 +36,12 @@
     <h2 class="display-6 fw-bold">Book Catalog</h2>
     <p class="text-muted">Explore, enjoy, and rate</p>
       <div class="input-group justify-content-center mb-4" style=" display: flex;  gap: 0.5rem;">
-        <input type="text" id="searchInput" class="form-control rounded-pill" placeholder="Search for a book title..." style="max-width: 400px; padding: 0.5rem 1rem; ">
-        <button class="btn btn-outline-primary rounded-pill" id="clearButton" style="padding: 0.5rem 1.5rem; background-color: gray; color: white; border: none; font-weight: 500;">Clear</button>
+        <input type="text" id="searchInput" class="form-control rounded-pill" placeholder="Search for a book title or author..." style="max-width: 400px; padding: 0.5rem 1rem; ">
+        <button class="btn btn-outline-primary rounded-pill text-white text-bold border-secondary" id="clearButton" style="padding: 0.5rem 1.5rem; background-color: #01013b;">Clear</button>
       </div>
       <div class="d-flex justify-content-center gap-3">
-        <button class="btn bg-secondary text-white rounded-pill" id="highlightButton">Highlight Titles</button>
-        <button class="btn bg-secondary text-white rounded-pill" id="resetButton">Reset Borders</button>
+        <button class="btn text-white rounded-pill" id="highlightButton" style="background-color: #01013b;">Highlight Long Titles</button>
+        <button class="btn text-white rounded-pill" id="resetButton" style="background-color: #01013b;">Reset All Borders</button>
       </div>
       
   </section>
@@ -57,7 +57,7 @@
             <p>F. Scott Fitzgerald</p>
             <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
             <p class="card-text small">A classic novel by F. Scott Fitzgerald about wealth, love, and the American dream.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
             <p >Harper Lee</p>
             <span class="text-warning me-1">★ ★ ★ ★ ★</span>
             <p class="card-text small">Harper Lee's novel about racial injustice in the Deep South</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@
             <p>George Orwell</p>
             <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
             <p class="card-text small">George Orwell's chilling dystopian novel about surveillance and control.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -94,7 +94,7 @@
             <p>Jane Austen</p>
             <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
             <p class="card-text small">A timeless romance novel by Jane Austen full of wit and social commentary.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@
             <p>Herman Melville</p>
             <span class="text-warning me-1">★ ★ ★ ★ ★</span>
             <p class="card-text small">Herman Melville’s tale of obsession and revenge on the high seas.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@
             <p>J.D. Salinger</p>
             <span class="text-warning me-1">★ ★ ★ ★ ★</span>
             <p class="card-text small">J.D. Salinger’s novel about teenage rebellion and identity.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -133,7 +133,7 @@
             <p>J.R.R. Tolkien</p>
             <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
             <p class="card-text small">J.R.R. Tolkien’s fantasy adventure that begins the epic Middle-earth saga.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -146,7 +146,7 @@
             <p>Ray Bradbury</p>
             <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
             <p class="card-text small">Ray Bradbury’s dystopian novel about censorship and the power of books.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -159,7 +159,7 @@
             <p>Charlotte Brontë</p>
             <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
             <p class="card-text small">Charlotte Brontë’s gothic romance of love, morality, and independence.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
@@ -171,16 +171,22 @@
             <p>Emily Brontë</p>
             <span class="text-warning me-1">★ ★ ★ ★ ☆</span>
             <p class="card-text small">Emily Brontë’s haunting tale of passion and revenge on the moors.</p>
-            <button class="btn btn-outline-dark w-100">Add to Wishlist</button>
+            <button class="wishlist btn btn-outline-dark w-100">Add to Wishlist</button>
           </div>
         </div>
       </div>
+
+      <div class="w-100 d-flex justify-content-center my-5">
+        <img id="noSearchOption" class="d-none" src="/images/notfound.png" alt="No Result" style="width: 150px; height: auto;">
+      </div>
+
+      
     
     </div>
   </main>
 
-  <footer class="bg-black text-white text-center py-3 mt-5">
-    <p class="mb-0">&copy; 2023 Book Catalog Inc.</p>
+  <footer class="text-white text-center py-3 mt-5" style="background-color: #01013b;">
+    <p class="mb-0">&copy; 2025 Book Catalog Inc.</p>
   </footer>
 
   <script src="script.js"></script>
