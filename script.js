@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       searchInput.value = "";
     });
-  
+  // took it off because the we and the interviewees didnt really like it
     // books.forEach(book => {
     //   book.addEventListener("click", () => {
     //     book.classList.add("bg-black", "text-white");
