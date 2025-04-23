@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (fivestarbooks.includes(title)) {
           book.classList.remove("border-primary");
           book.classList.add("border-warning", "border-5");
+          book.style.borderStyle = "dotted";
         }
       });
     });

@@ -15,6 +15,12 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     cursor: pointer;
   }
+
+
+  #highlightButton:focus-visible,
+  #resetButton:focus-visible {
+    outline: 3px solid #dd0a0a;
+  }
   </style>
 </head>
 <body class="bg-light d-flex flex-column min-vh-100">
@@ -37,6 +43,7 @@
     <h2 class="display-6 fw-bold">Book Catalog</h2>
     <p class="text-muted">Explore, enjoy, and rate</p>
       <div class="input-group justify-content-center mb-4" style=" display: flex;  gap: 0.5rem;">
+        <label for="searchInput" class="form-label mt-2">Search: </label>
         <input type="text" id="searchInput" class="form-control rounded-pill" placeholder="Search for a book title or author..." style="max-width: 400px; padding: 0.5rem 1rem; ">
         <button class="btn btn-outline-primary rounded-pill text-white text-bold border-secondary" id="clearButton" style="padding: 0.5rem 1.5rem; background-color: #000000;">Clear</button>
       </div>
@@ -63,7 +70,7 @@
     </div>
     <div class="col">
       <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-        <img src="/images/451.jpg" class="card-img-top img-fluid mx-auto" alt="Fahrenheit 451" style="height: 500px; object-fit: cover;">
+        <img src="/images/451.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of Fahrenheit 451" style="height: 500px; object-fit: cover;">
         <div class=" card-body d-flex flex-column justify-content-between">
           <h2 class="card-title">Fahrenheit 451</h2>
           <p>Ray Bradbury</p>
@@ -75,7 +82,7 @@
     </div>
     <div class="col">
       <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-        <img src="/images/janeeyre.jpg" class="card-img-top img-fluid mx-auto" alt="Jane Eyre" style="height: 500px; object-fit: cover;">
+        <img src="/images/janeeyre.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of Jane Eyre" style="height: 500px; object-fit: cover;">
         <div class=" card-body d-flex flex-column justify-content-between">
           <h2 class="card-title">Jane Eyre</h2>
           <p>Charlotte Brontë</p>
@@ -87,7 +94,7 @@
     </div>
     <div class="col">
       <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-        <img src="/images/moby1.jpg" class="card-img-top img-fluid mx-auto" alt="Moby-Dick" style="height: 500px; object-fit: cover;">
+        <img src="/images/moby1.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of Moby-Dick" style="height: 500px; object-fit: cover;">
         <div class=" card-body d-flex flex-column justify-content-between">
           <h2 class="card-title">Moby-Dick</h2>
           <p>Herman Melville</p>
@@ -99,7 +106,7 @@
     </div>
     <div class="col">
       <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-        <img src="/images/pride.jpg" class="card-img-top img-fluid mx-auto" alt="Pride and Prejudice" style="height: 500px; object-fit: cover;">
+        <img src="/images/pride.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of Pride and Prejudice" style="height: 500px; object-fit: cover;">
         <div class=" card-body d-flex flex-column justify-content-between">
           <h2 class="card-title">Pride and Prejudice</h2>
           <p>Jane Austen</p>
@@ -111,7 +118,7 @@
     </div>
     <div class="col">
       <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-        <img src="/images/thecatcher.jpg" class="card-img-top img-fluid mx-auto" alt="The Catcher in the Rye" style="height: 500px; object-fit: cover;">
+        <img src="/images/thecatcher.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of The Catcher in the Rye" style="height: 500px; object-fit: cover;">
         <div class=" card-body d-flex flex-column justify-content-between">
           <h2 class="card-title">The Catcher in the Rye</h2>
           <p>J.D. Salinger</p>
@@ -123,7 +130,7 @@
     </div>
       <div class="col">
         <div class="book card h-100 shadow rounded-4 overflow-hidden border-secondary">
-          <img src="/images/greatgatsby.webp" class="card-img-top img-fluid mx-auto" alt="The Great Gatsby" style="height: 500px; object-fit: cover;">
+          <img src="/images/greatgatsby.webp" class="card-img-top img-fluid mx-auto" alt="Book cover of The Great Gatsby" style="height: 500px; object-fit: cover;">
           <div class="card-body d-flex flex-column justify-content-between">
             <h2 class="card-title">The Great Gatsby</h2>
             <p>F. Scott Fitzgerald</p>
@@ -135,7 +142,7 @@
       </div>
       <div class="col">
         <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-          <img src="/images/hobbit.jpg" class="card-img-top img-fluid mx-auto" alt="The Hobbit" style="height: 500px; object-fit: cover;">
+          <img src="/images/hobbit.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of The Hobbit" style="height: 500px; object-fit: cover;">
           <div class=" card-body d-flex flex-column justify-content-between">
             <h2 class="card-title">The Hobbit</h2>
             <p>J.R.R. Tolkien</p>
@@ -147,7 +154,7 @@
       </div>
       <div class="col">
         <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-          <img src="/images/tokill.jpg" class="card-img-top img-fluid mx-auto" alt="To Kill a Mockingbird" style="height: 500px; object-fit: cover;">
+          <img src="/images/tokill.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of To Kill a Mockingbird" style="height: 500px; object-fit: cover;">
           <div class=" card-body d-flex flex-column justify-content-between">
             <h2 class="card-title">To Kill a Mockingbird</h2>
             <p >Harper Lee</p>
@@ -159,7 +166,7 @@
       </div>
       <div class="col">
         <div class="book card h-100 shadow rounded-4 border-secondary overflow-hidden">
-          <img src="/images/wuther.jpg" class="card-img-top img-fluid mx-auto" alt="Wuthering Heights" style="height: 500px; object-fit: cover;">
+          <img src="/images/wuther.jpg" class="card-img-top img-fluid mx-auto" alt="Book cover of Wuthering Heights" style="height: 500px; object-fit: cover;">
           <div class=" card-body d-flex flex-column justify-content-between">
             <h2 class="card-title">Wuthering Heights</h2>
             <p>Emily Brontë</p>
@@ -171,7 +178,7 @@
       </div>
 
       <div class="w-100 d-flex justify-content-center my-5">
-        <img id="noSearchOption" class="d-none" src="/images/notfound.png" alt="No Result" style="width: 150px; height: auto;">
+        <img id="noSearchOption" class="d-none" src="/images/notfound.png" alt="No Results" style="width: 150px; height: auto;">
       </div>
 
       
